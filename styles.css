@@ -1,0 +1,412 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* MAIN BACKGROUND */
+.background-wrapper {
+    min-height: 100vh;
+    position: relative;
+    color: white;
+    background: linear-gradient(
+        135deg,
+        #0f2027,
+        #203a43,
+        #2c5364
+    );
+    overflow: hidden;
+}
+
+/* FADE OVERLAY LAYER */
+.background-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: 360px; /* SAME AS ORIGINAL PATTERN */
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 0;
+}
+
+/* OLA THEME */
+.background-wrapper.ola-theme::after {
+    background-image: url("./assets/ola-bg.png");
+    opacity: 1;
+}
+
+/* RAPIDO THEME */
+.background-wrapper.rapido-theme::after {
+    background-image: url("./assets/rapido-bg.png");
+    opacity: 1;
+}
+
+.background-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("./assets/homepage-bg.png");
+    background-repeat: repeat;
+    background-size: 360px; /* 👈 BIGGER ICONS */
+
+    opacity: 0.18; /* slightly stronger since icons are bigger */
+    z-index: 0;
+    filter: blur(0.4px);
+}
+
+
+
+
+/* Push content above background */
+.hero-section,
+.results-section {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+/* PAGE 1: HERO SECTION */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 120px;
+    overflow: visible;
+    position: relative;
+    z-index: 10;
+}
+
+
+.hero-content {
+    text-align: center;
+    max-width: 520px;   /* 👈 wider card */
+    width: 100%;
+    padding: 20px;
+}
+
+
+.hero-content h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    opacity: 0.85;
+    margin-bottom: 25px;
+}
+
+/* INPUT CARD */
+.input-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    overflow: visible;
+}
+
+.input-card input {
+    width: 100%;
+    padding: 16px 18px;     /* 👈 taller & wider */
+    border-radius: 12px;
+    border: none;
+    outline: none;
+
+    font-size: 1.05rem;     /* 👈 bigger text */
+}
+
+
+.input-card button {
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    border: none;
+    background: #00d4ff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.input-card button:hover {
+    background: #00b8e6;
+    transform: scale(1.03);
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+
+/* RESULTS SECTION (NEXT FLOW STEP) */
+.results-section {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 20px;   /* SMALL */
+    padding-bottom: 80px;
+
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+.results-section h2 {
+    font-size: 2.3rem;
+    margin-top: 40px;
+    margin-bottom: 50px; /* space before phone cards */
+    letter-spacing: 0.5px;
+}
+
+
+.results-section p {
+    opacity: 0.8;
+}
+
+/* HORIZONTAL APP SCROLL */
+.apps-scroll-container {
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-bottom: 120px;
+}
+
+
+
+
+.apps-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.apps-scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+/* CARD WRAPPER */
+.apps-scroll {
+    display: flex;
+    gap: 50px;
+    padding: 20px 40px;
+}
+
+/* APP CARD */
+.app-card {
+    min-width: 240px;
+    height: 420px;
+    border-radius: 36px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    transform-origin: center bottom;
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* APP NAME */
+.app-card h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    z-index: 1;
+}
+
+/* HOVER EFFECT */
+.apps-scroll:hover .app-card {
+    opacity: 0.45;
+}
+
+.app-card.active {
+    transform: translateY(-12px) scale(1.08);
+    opacity: 1;
+}
+
+
+/* BRAND COLORS */
+.app-card[data-app="namma-yatri"] {
+    background: #ffffff;
+    color: #000;
+}
+
+.app-card[data-app="ola"] {
+    background: #8fd14f;
+    color: #000;
+}
+
+.app-card[data-app="rapido"] {
+    background: #ffc400;
+    color: #000;
+}
+
+.app-card[data-app="uber"] {
+    background: #000;
+    color: #fff;
+}
+
+.app-card::after {
+    content: "";
+    position: absolute;
+    inset: 10px;
+
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.08);
+
+    pointer-events: none;
+}
+
+.apps-scroll:hover .app-card:hover,
+.app-card.active {
+    transform: scale(1.08) translateY(-14px);
+    opacity: 1;
+}
+
+.apps-scroll::before,
+.apps-scroll::after {
+    content: "";
+    flex: 0 0 40px;
+}
+
+.phone-content {
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.phone-header {
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+
+.phone-header h3 {
+    font-size: 1.5rem;
+}
+
+.phone-body {
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+}
+
+
+.ride-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 14px 16px;
+    border-radius: 14px;
+
+    background: rgba(0, 0, 0, 0.12); /* 👈 darker */
+    color: #000; /* default */
+
+    font-size: 0.95rem;
+}
+
+.app-card[data-app="uber"] .ride-option {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.app-card.active .phone-body {
+    display: flex;
+    animation: fadeUp 0.25s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.app-card.active .phone-header {
+    margin-top: 20px;
+}
+
+.phone-divider {
+    height: 1px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+}
+
+.app-card[data-app="uber"] .phone-divider {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.app-card:not(.active) .phone-body {
+    display: none;
+}
+
+.app-card:not(.active) .phone-header {
+    margin-top: 60px; /* center app name */
+}
+
+.suggestions {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    max-height: 220px;
+    overflow-y: auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background: #f0f0f0;
+}
+
+.suggestion-active {
+    background: #00d4ff !important;
+    color: #000 !important;
+}
+
+.suggestion-item {
+    padding: 12px 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    background: #ffffff;
+    transition: background 0.2s ease;
+
+    color: #000;   /* 🔥 THIS FIXES IT */
+}

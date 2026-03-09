@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FareFlow</title>
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <!-- PAGE 6: BACKGROUND WRAPPER -->
+    <div class="background-wrapper">
+
+        <!-- PAGE 1: LANDING SECTION -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Compare Cab Prices Instantly</h1>
+                <p>Check fares from multiple apps without switching</p>
+
+                <div class="input-card">
+                    <div class="input-group">
+                        <input id="source" type="text" placeholder="Enter source" autocomplete="off">
+                        <div id="sourceSuggestions" class="suggestions"></div>
+                    </div>
+
+
+                    <div class="input-group">
+                        <input id="destination" type="text" placeholder="Enter destination" autocomplete="off">
+                        <div id="destinationSuggestions" class="suggestions"></div>
+                    </div>
+
+                    <button id="checkPricesBtn">Check Prices</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEXT SECTION (PLACEHOLDER FOR APP CARDS) -->
+        <section class="results-section" id="results">
+            <h2 id="resultsTitle">Select a Ride App</h2>
+                <div class="apps-scroll-container">
+                    <div class="apps-scroll">
+
+                        <div class="app-card" data-app="namma-yatri">
+                            <div class="phone-content">
+                                <div class="phone-divider"></div>
+                                <div class="phone-header">
+                                    <h3>Namma Yatri</h3>
+                                </div>
+
+                                <div class="phone-body">
+                                    <div class="ride-option">
+                                        <span>Bike</span>
+                                        <span class="ride-data" data-type="bike"></span>
+                                    </div>
+
+                                    <div class="ride-option">
+                                        <span>Auto</span>
+                                        <span class="ride-data" data-type="auto"></span>
+                                    </div>
+
+                                    <div class="ride-option">
+                                        <span>Cab</span>
+                                        <span class="ride-data" data-type="cab"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="app-card" data-app="ola">
+                            <div class="phone-content">
+                                <div class="phone-divider"></div>
+                                <div class="phone-header">
+                                    <h3>Ola</h3>
+                                </div>
+
+                                <div class="phone-body">
+                                    <div class="ride-option">
+                                        <span>Bike</span>
+                                        <span class="ride-data" data-type="bike"></span>
+                                    </div>
+
+                                    <div class="ride-option">
+                                        <span>Auto</span>
+                                        <span class="ride-data" data-type="auto"></span>
+                                    </div>
+
+                                    <div class="ride-option">
+                                        <span>Cab</span>
+                                        <span class="ride-data" data-type="cab"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="app-card" data-app="rapido">
+                            <div class="phone-content">
+                                <div class="phone-divider"></div>
+                                <div class="phone-header">
+                                    <h3>Rapido</h3>
+                                </div>
+
+                                <div class="phone-body">
+                                    <div class="ride-option">
+                                        <span>Bike</span>
+                                        <span class="ride-data" data-type="bike"></span>
+                                    </div>
+
+                                    <div class="ride-option">
+                                        <span>Auto</span>
+                                        <span class="ride-data" data-type="auto"></span>
+                                    </div>
+
+                                    <div class="ride-option">
+                                        <span>Cab</span>
+                                        <span class="ride-data" data-type="cab"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="app-card" data-app="uber">
+                            <div class="phone-content">
+                                <div class="phone-divider"></div>
+                                <div class="phone-header">
+                                    <h3>Uber</h3>
+                                </div>
+
+                                <div class="phone-body">
+                                    <div class="ride-option">
+                                        <span>Bike</span>
+                                        <span class="ride-data" data-type="bike"></span>
+                                    </div>
+
+                                    <div class="ride-option">
+                                        <span>Auto</span>
+                                        <span class="ride-data" data-type="auto"></span>
+                                    </div>
+
+                                    <div class="ride-option">
+                                        <span>Cab</span>
+                                        <span class="ride-data" data-type="cab"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
